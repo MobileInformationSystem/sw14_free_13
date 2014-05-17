@@ -16,7 +16,7 @@ public class FillCategory {
 		connection.close();
 	}
 	
-	public List<Point> getPoints(){
+/*public List<Point> getPoints(){
 		List<Point> points;
 		try {
             while (db_data.next()) {
@@ -28,6 +28,6 @@ public class FillCategory {
 		return points;
 		
 		
-	}
+	}*/
 
 }

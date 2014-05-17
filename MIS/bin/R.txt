@@ -289,7 +289,7 @@ int id showTitle 0x7f050006
 int id split_action_bar 0x7f05001e
 int id submit_area 0x7f050039
 int id tabMode 0x7f050002
-int id textMIS 0x7f05003d
+int id text_MIS 0x7f05003d
 int id title 0x7f05002b
 int id top_action_bar 0x7f050020
 int id txt_map 0x7f050043

@@ -9,7 +9,7 @@
     tools:context="com.example.mis.MainActivity$PlaceholderFragment" >
 
     <TextView
-        android:id="@+id/textMIS"
+        android:id="@+id/text_MIS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -64,8 +64,8 @@
         android:id="@+id/txt_map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textMIS"
-        android:layout_below="@+id/textMIS"
+        android:layout_alignLeft="@+id/text_MIS"
+        android:layout_below="@+id/text_MIS"
         android:fontFamily="sans-serif-thin"
         android:text="Map your way through..."
         android:textAppearance="?android:attr/textAppearanceMedium" />
