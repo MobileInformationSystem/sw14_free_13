@@ -8,26 +8,28 @@ public class FillCategory {
 
 	private DB_Connect connection;
 	private ResultSet db_data;
-	
+
 	public FillCategory(String category) {
 		connection = new DB_Connect();
-		String sql = "SELECT * FROM MIS WHERE category='" +  category + "';";
+		String sql = "SELECT * FROM MIS WHERE category='" + category + "';";
 		db_data = connection.readDatabase(sql);
 		connection.close();
 	}
-	
-/*public List<Point> getPoints(){
-		List<Point> points;
+
+	/**
+	public List<Point> getPoints() {
+		List<Point> points = null;
 		try {
-            while (db_data.next()) {
-            	points.add(new Point());
-            	
-            }   } catch (SQLException ex) {
-        }
-		
+			while (db_data.next()) {
+				points.add(new Point());
+
+			}
+		} catch (SQLException ex) {
+		}
+
 		return points;
-		
-		
-	}*/
+
+	}
+	**/
 
 }

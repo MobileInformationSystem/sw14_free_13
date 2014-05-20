@@ -73,45 +73,69 @@ public class MainActivity extends Activity implements OnClickListener {
 			public void onClick(View v) {
 				txt_buttonPressed.setText("TUG");
 
-				Intent in = new Intent(MainActivity.this,
+				Category cat = new Category();
+				cat.setCategory("TUG");
+
+				Intent intent = new Intent(MainActivity.this,
 						ListViewActivity.class);
-				startActivity(in);
+				intent.putExtra("cat", cat);
+				startActivity(intent);
 			}
 		});
 
 		cmd_pois.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				txt_buttonPressed.setText("POIs");
-				Intent in = new Intent(MainActivity.this,
+
+				Category cat = new Category();
+				cat.setCategory("POIs");
+
+				Intent intent = new Intent(MainActivity.this,
 						ListViewActivity.class);
-				startActivity(in);
+				intent.putExtra("cat", cat);
+				startActivity(intent);
 			}
 		});
 
 		cmd_eat.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				txt_buttonPressed.setText("Eat It");
-				Intent in = new Intent(MainActivity.this,
+
+				Category cat = new Category();
+				cat.setCategory("Eat It");
+
+				Intent intent = new Intent(MainActivity.this,
 						ListViewActivity.class);
-				startActivity(in);
+				intent.putExtra("cat", cat);
+				startActivity(intent);
 			}
 		});
 
 		cmd_buy.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				txt_buttonPressed.setText("Buy It");
-				Intent in = new Intent(MainActivity.this,
+
+				Category cat = new Category();
+				cat.setCategory("Buy It");
+
+				Intent intent = new Intent(MainActivity.this,
 						ListViewActivity.class);
-				startActivity(in);
+				intent.putExtra("cat", cat);
+				startActivity(intent);
 			}
 		});
 
 		cmd_drink.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				txt_buttonPressed.setText("Drink It");
-				Intent in = new Intent(MainActivity.this,
+
+				Category cat = new Category();
+				cat.setCategory("Drink It");
+
+				Intent intent = new Intent(MainActivity.this,
 						ListViewActivity.class);
-				startActivity(in);
+				intent.putExtra("cat", cat);
+				startActivity(intent);
 			}
 		});
 

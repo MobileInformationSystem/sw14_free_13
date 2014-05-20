@@ -1,5 +1,7 @@
 package com.example.mis;
 
+import java.util.List;
+
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -32,9 +34,46 @@ public class ListViewActivity extends MainActivity implements OnClickListener {
 
 		this.txt_category = (EditText) this.findViewById(R.id.txt_category);
 
-		// Get ListView object from xml
-		listView = (ListView) findViewById(R.id.list);
+        Category category = (Category) getIntent().getSerializableExtra("cat");
+        String pressed_button = category.getCategory();
+       
+		String tug = "TUG";
+		String pois = "POIs";
+		String eatIt = "Eat It";
+		String drinkIt = "Drink It";
+		String buyIt = "Buy It";
 
+		
+		if (tug.equals(pressed_button))
+		{
+			txt_category.setText("tug");
+     	}
+		else if (pois.equals(pressed_button))
+		{
+			txt_category.setText("pois");
+		}
+		else if (eatIt.equals(pressed_button))
+		{
+			txt_category.setText("eat it");
+		}
+		else if (drinkIt.equals(pressed_button))
+		{
+			txt_category.setText("drink it");
+		}
+		else if (buyIt.equals(pressed_button))
+		{
+			txt_category.setText("buy it");
+		}
+		else
+		{
+			txt_category.setText("FAIL");
+		}
+		
+
+		
+		// Get ListView object from xml
+	    // listView = (ListView) findViewById(R.id.list);
+		
 		// CustomAdapter customAdapter = new CustomAdapter();
 		// listView.setAdapter(customAdapter);
 
