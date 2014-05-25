@@ -1,16 +1,12 @@
 package com.example.mis;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
 import java.util.Vector;
 
 public class FillCategory {
 
-	private DB_Connect connection;
-	private ResultSet db_data;
 	private String category;
 	private Vector<Point> points;
+	private Vector<Point> data_points;
 
 	public FillCategory() {
 		points = null;
@@ -20,18 +16,11 @@ public class FillCategory {
 		points = null;
         setCategory(param_category);
 	}
-	
-	public void getDataFromDB()
-	{
-		connection = new DB_Connect();
-		String sql = "SELECT * FROM MIS WHERE category='" + category + "';";
-		db_data = connection.readDatabase(sql);
-		connection.close();
-	}
+
 
 	public void getData()
 	{
-		getDataFromDB();
+		//getDataFromDB();
 		
 		String db_name;
 		int db_id;
@@ -40,26 +29,29 @@ public class FillCategory {
 		int db_rating_sum;
 		String db_map;
 		
-		Vector<Point> data_points = null;
-	try {
-		while (db_data.next()) {
+		data_points = null;
+		/*while () {
 			db_name = db_data.getString("Name");
 			db_id = db_data.getInt("ID");
 			db_category = db_data.getString("Category");
 			db_rating_num = db_data.getInt("Rating_Num");
 			db_rating_sum = db_data.getInt("Rating_Sum");
-			db_map = db_data.getString("Map");
-			
-			data_points.add(new Point(db_id, db_name, db_category, db_rating_num, db_rating_sum, db_map));
-		}
-	} catch (SQLException e) {
-	    }
+			db_map = db_data.getString("Map");*/
+		
+
+	data_points.add(new Point(1, "Objekt1", category, 0, 0, "Inffeldgasse 16, Graz"));	
+	data_points.add(new Point(2, "Objekt2", category, 0, 0, "Hauptplatz, Graz"));
+	data_points.add(new Point(3, "Objekt3", category, 0, 0, "Hauptbahnhof, Graz"));
+	data_points.add(new Point(3, "Objekt4", category, 0, 0, "Jakominiplatz, Graz"));
     points = data_points;
 	}
 	
 	public void setCategory(String param_category)
 	{
-		points.removeAllElements();
+		if (points != null)
+		{
+		    points.removeAllElements();			
+		}
 		category = param_category;
 		getData();
 		
