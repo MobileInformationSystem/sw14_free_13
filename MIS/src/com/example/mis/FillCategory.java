@@ -7,20 +7,20 @@ public class FillCategory {
 	private String category;
 	private Vector<Point> points;
 	private Vector<Point> data_points;
+	private dataStorage db;
 
 	public FillCategory() {
 		points = null;
 	}
 	
-	public FillCategory(String param_category) {
-		points = null;
-        setCategory(param_category);
+	public FillCategory(String param_category, dataStorage param_db) {
+		points = new Vector<Point>();
+        setCategory(param_category, param_db);
 	}
 
 
 	public void getData()
 	{
-		//getDataFromDB();
 		
 		String db_name;
 		int db_id;
@@ -29,14 +29,7 @@ public class FillCategory {
 		int db_rating_sum;
 		String db_map;
 		
-		data_points = null;
-		/*while () {
-			db_name = db_data.getString("Name");
-			db_id = db_data.getInt("ID");
-			db_category = db_data.getString("Category");
-			db_rating_num = db_data.getInt("Rating_Num");
-			db_rating_sum = db_data.getInt("Rating_Sum");
-			db_map = db_data.getString("Map");*/
+		data_points = new Vector<Point>();
 		
 
 	data_points.add(new Point(1, "Objekt1", category, 0, 0, "Inffeldgasse 16, Graz"));	
@@ -46,20 +39,21 @@ public class FillCategory {
     points = data_points;
 	}
 	
-	public void setCategory(String param_category)
+	public void setCategory(String param_category, dataStorage param_db)
 	{
 		if (points != null)
 		{
 		    points.removeAllElements();			
 		}
 		category = param_category;
+		db = param_db;
 		getData();
 		
 	}
 	
-	public Vector<Point> getPoints()
+	public int getSize()
 	{
-		return points;
+		return points.size();
 	}
 	
 

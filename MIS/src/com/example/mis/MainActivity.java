@@ -29,12 +29,23 @@ public class MainActivity extends Activity implements OnClickListener {
 	private Button cmd_eat;
 	private Button cmd_buy;
 	private Button cmd_drink;
+	
+	private dataStorage db;
 
 	private EditText txt_buttonPressed;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+        db = new dataStorage(this);
+    	db.addPoint(new Point(1, "Objekt1", "TUG", 0, 0, "Inffeldgasse 16"));	
+    	db.addPoint(new Point(2, "Objekt2", "POI", 0, 0, "Hauptplatz"));
+    	db.addPoint(new Point(3, "Objekt3", "EAT", 0, 0, "Hauptbahnhof"));
+    	db.addPoint(new Point(4, "Objekt4", "DRINK", 0, 0, "Jakominiplatz"));
+    	db.addPoint(new Point(5, "Objekt4", "BUY", 0, 0, "Jakominiplatz"));
+		
+
 		setContentView(R.layout.activity_main);
 
 		this.cmd_tug = (Button) this.findViewById(R.id.cmdTUG);
